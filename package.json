@@ -6,7 +6,7 @@
   "module": "dist/index.esm.js",
   "engines": {
     "node": "18.x"
-  }
+  },
   "keywords": [
     "camera",
     "webcam",
