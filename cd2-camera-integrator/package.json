@@ -25,7 +25,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "npm run install && npm run build && react-scripts build && node server.js",
+    "start": "npm install && npm run build && react-scripts build && node server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build": "react-scripts build",
