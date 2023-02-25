@@ -12,5 +12,5 @@ app.use('/',
 app.listen(process.env.PORT || 3000, (err) =>{
 
   if(err){return console.log(err)}
-  console.log('Tudo funcionando certinho ', server.address().port);
+  console.log('Tudo funcionando certinho ');
 });
