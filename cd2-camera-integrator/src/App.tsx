@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import api from './services/control_id';
 import { message } from 'react-message-popup'
 import { Camera, CameraType } from './Camera';
-message.info('Precisamos tirar uma foto bem bonita. Fique com o rosto centralizado e sorria :)', 10000)
+//message.info('Precisamos tirar uma foto bem bonita. Fique com o rosto centralizado e sorria :)', 10000)
 
 const Wrapper = styled.div`
   position: fixed;
