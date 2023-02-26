@@ -128,7 +128,6 @@ const FullScreenImagePreview = styled.div<{ image: string | null }>`
 `;
 
 const App = () => {
-  message.success('Vamos precisar tirar uma foto bem bonita. Favor procure um lugar claro e não sorria :)', 8000)
 
   let session = '';
   let userId = '';
