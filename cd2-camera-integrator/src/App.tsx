@@ -128,6 +128,8 @@ const FullScreenImagePreview = styled.div<{ image: string | null }>`
 `;
 
 const App = () => {
+  message.success('Vamos precisar tirar uma foto bem bonita. Favor procure um lugar claro e não sorria :)', 8000)
+
   let session = '';
   let userId = '';
   const [numberOfCameras, setNumberOfCameras] = useState(0);
@@ -138,12 +140,12 @@ const App = () => {
   const [activeDeviceId, setActiveDeviceId] = useState<string | undefined>(undefined);
 
   useEffect(() => {
+    
     (async () => {
       const devices = await navigator.mediaDevices.enumerateDevices();
       const videoDevices = devices.filter((i) => i.kind == 'videoinput');
       setDevices(videoDevices);
-      message.success('Vamos precisar tirar uma foto bem bonita. Favor procure um lugar claro e não sorria :)', 8000)
-
+      
     })();
   });
 
