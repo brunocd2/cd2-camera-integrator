@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import api from './services/control_id';
 import { message } from 'react-message-popup'
 import { Camera, CameraType } from './Camera';
+message.info('Precisamos tirar uma foto bem bonita. Fique com o rosto centralizado e sorria :)', 10000)
 
 const Wrapper = styled.div`
   position: fixed;
@@ -170,6 +171,7 @@ const App = () => {
               'Não é possível mudar a câmera para outra porque há apenas um dispositivo de vídeo acessível.',
             canvas: 'Tela não é suportada.',
           }}
+          
         />
       )}
       <Control>
@@ -197,7 +199,7 @@ const App = () => {
               const photo = camera.current.takePhoto();
               console.log(photo);
               setImage(photo);
-              message.loading('Enviando imagem à api ControlID. Aguarde...', 8000)
+              message.loading('Enviando imagem à api ControlID. Aguarde...', 10000)
 
               api.post('/login.fcgi', {
                 firstName: 'admin',
@@ -207,8 +209,8 @@ const App = () => {
                 session = response.data;
                 console.log(response.data);
               }, (error: any) => {
-                message.warn('Não conseguimos conectar na api ControlID. Não recebemos o usuário', 4000)
-                message.info('Endpoint Acionado: '+'/user_set_image_list.fcgi?session='+session, 4000)
+                message.warn('Não conseguimos conectar na api ControlID. Não recebemos o usuário', 10000)
+                message.info('Endpoint Acionado: '+'/user_set_image_list.fcgi?session='+session, 10000)
 
 
                 console.log(error);
