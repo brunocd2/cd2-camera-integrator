@@ -142,6 +142,8 @@ const App = () => {
       const devices = await navigator.mediaDevices.enumerateDevices();
       const videoDevices = devices.filter((i) => i.kind == 'videoinput');
       setDevices(videoDevices);
+      message.success('Vamos precisar tirar uma foto bem bonita. Favor procure um lugar claro e não sorria :)', 8000)
+
     })();
   });
 
@@ -194,7 +196,7 @@ const App = () => {
               const photo = camera.current.takePhoto();
               console.log(photo);
               setImage(photo);
-              message.info('Enviando imagem à api ControlID. Aguarde...', 4000)
+              message.loading('Enviando imagem à api ControlID. Aguarde...', 8000)
 
               api.post('/login.fcgi', {
                 firstName: 'admin',
