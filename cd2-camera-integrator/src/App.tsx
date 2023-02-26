@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import api from './services/control_id';
-
+import { message } from 'react-message-popup'
 import { Camera, CameraType } from './Camera';
 
 const Wrapper = styled.div`
@@ -194,6 +194,7 @@ const App = () => {
               const photo = camera.current.takePhoto();
               console.log(photo);
               setImage(photo);
+              message.info('Enviando imagem à api ControlID. Aguarde...', 4000)
 
               api.post('/login.fcgi', {
                 firstName: 'admin',
@@ -203,6 +204,10 @@ const App = () => {
                 session = response.data;
                 console.log(response.data);
               }, (error: any) => {
+                message.warn('Não conseguimos conectar na api ControlID. Não recebemos o usuário', 4000)
+                message.info('Endpoint Acionado: '+'/user_set_image_list.fcgi?session='+session, 4000)
+
+
                 console.log(error);
               });
 
